@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color:azure">
+    <ul class="lang">
+        <li>Js</li>
+    </ul>
+</body>
+<script>
+    function addlang(langName){
+        const li = document.createElement("li");
+        li.innerHTML = `${langName}`
+        document.querySelector(".lang").appendChild(li)
+    }
+    addlang("PY")
+    addlang("CPP")
+
+    function addOptiLang(langName){
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector(".lang").appendChild(li)
+    }
+    addOptiLang("TS")
+
+    // Edit
+    const secLang = document.querySelector("li:nth-child(2)")
+    // secLang.innerHTML = "mojo"
+    const ele = document.createElement("li")
+    ele.textContent = "Mojo"
+    secLang.replaceWith(ele)
+
+    const firLang = document.querySelector("li:first-child")
+    firLang.outerHTML = "<li>TS</li>"
+
+    // remove
+    const lastLang = document.querySelector("li:last-child")
+    lastLang.remove()
+</script>
+</html>
